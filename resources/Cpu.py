@@ -14,4 +14,6 @@ class CpuResource(Resource):
     def post(self, data):
         print('/////////////////////')
         print('Got post message')
+        data = request.get_json(force=True)
+        print(data)
         
