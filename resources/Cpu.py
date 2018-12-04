@@ -11,9 +11,13 @@ class CpuResource(Resource):
         cpus = cpus_schema.dump(cpus).data
         return {'status': 'success', 'data': cpus}, 200
 
-    def post(self, data):
+    def post(self):
         print('/////////////////////')
         print('Got post message')
-        data = request.get_json(force=True)
-        print(data)
+
+        try:
+            data = request.get_json(force=True)
+            print(data)
+        except:
+            print(request)
         
