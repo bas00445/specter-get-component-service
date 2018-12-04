@@ -10,3 +10,8 @@ class CpuResource(Resource):
         cpus = Cpu.query.all()
         cpus = cpus_schema.dump(cpus).data
         return {'status': 'success', 'data': cpus}, 200
+
+    def post(self, data):
+        print('/////////////////////')
+        print('Got post message')
+        
